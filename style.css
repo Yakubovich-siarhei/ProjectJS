@@ -151,7 +151,7 @@ form.catalin input{
 	  float: left;
 	  border: none;
 	  padding: 2px 4px 2px 4px;
-	  /* font: 16px Arial, Helvetica, sans-serif; */
+	  /* font: 16px Arial, Helvetica, sans-serif;  */
 	  height: 20px;
 	  width: 85%;
 	  margin: 0;
@@ -160,7 +160,7 @@ form.catalin input{
 	  box-shadow: 0 0 1px rgba(0,0,0,.5);
 	  border-radius: 3px 0 0 3px;
 }
-form.catalin button{
+form.catalin button {
 	  float: left;
 	  border: none;
 	  background-color: #778899;
@@ -168,7 +168,7 @@ form.catalin button{
 	  margin: 0;
 	  width: 15%;
 	  height: 20px;
-	  /* font: bold 12px/20px Arial, Helvetica, sans-serif; */
+	   /* font: bold 12px/20px Arial, Helvetica, sans-serif;  */
 	  position: relative;
 	  cursor: pointer;
 	  text-shadow: 1px 1px 1px rgba(255,255,255,.5);
@@ -194,8 +194,7 @@ form.catalin button:hover:before{
 		text-shadow: 1px 1px 1px rgba(255,255,255,.6);
 }
   
-  /* Placeholder
-  -----------------------------------------------------*/
+
 form.catalin input::-webkit-input-placeholder {
 	   color: #999;
 	   font-weight: normal;
@@ -308,6 +307,10 @@ form.catalin input:-ms-input-placeholder {
 	height: 400px;
 }
 
+.sort_category {
+	text-align: start;
+	border: 1px solid black;
+}
 
 .container_produkt slot {
 	display: flex;

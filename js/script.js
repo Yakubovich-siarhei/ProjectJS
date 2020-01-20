@@ -228,7 +228,12 @@ stripe.addEventListener('click', function () {
 
 
 // 
+let globalSearchValue = document.querySelector('.globalSearchValue');
+let globalSearch = document.querySelector('.globalSearch');
 
+globalSearch.onclick = function () {    
+    window.open('./catalog.html')
+    }
 
 
 

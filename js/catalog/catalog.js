@@ -105,11 +105,6 @@ function sortProduct () {
     
     document.getElementById('radioClik').onclick = sortProduct;
     
-function sort21 () {
-    for (let i = 0; i < catalogProduct.length; i++) {
-
-    }
-}
 
 // убывание цены
 document.querySelector('.sortUp').onclick = function () {
@@ -146,7 +141,7 @@ document.querySelector('.sortDown').onclick = function () {
     let allproducts2 = new AllProducts('.container_produkt', '.container_counter', myarray);
 }
 
-// возрастание  цены
+// возрастание  цены2
 document.querySelector('.sortDown2').onclick = function () {
     let myarray2=sort;
         myarray2.sort(function(a,b){ 
@@ -163,39 +158,31 @@ document.querySelector('.allSort').onclick = function () {
 }
 
 
-// let maxPrice = document.querySelector('.maxPrice')
-// document.querySelector('#sortPrice').onclick = function () {
-//     let myarray=catalogProduct;
-//     function fn(myarray, b, c) {
-//           return myarray.filter(function(myarray) {
-//             return myarray.price >= b && myarray.price <= c;
-//           }).sort(function(a, b) {
-//             return b.price - a.price;
-//           });
-//         }
-//         fn(myarray, 1, 100)  
-//     console.log(myarray)
-//     deletCatalog();
-//     let allproducts2 = new AllProducts('.container_produkt', '.container_counter', myarray);
-// }
 
+// let globalSearchValue = document.querySelector('.globalSearchValue');
+let sortNamevalue = document.querySelector('.sortNamevalue');
 
-// let maxPrice = document.querySelector('.maxPrice')
-// document.querySelector('#sortPrice').onclick = function () {
-//     let myarray=catalogProduct;
-//         myarray.sort(function(a,b){ 
-//             for (let i=0; i<myarray.length; i++) {
-//                 if (myarray[i].price <= 100) {                    
-//                 }
-//             }
-            
-//     return b.price-a.price; 
-// })    
-//     console.log(myarray)
-//     deletCatalog();
-//     let allproducts2 = new AllProducts('.container_produkt', '.container_counter', myarray);
-// }
+sortNamevalue.oninput = function sortN () {
+    let myarray=catalogProduct;
+    let arr = [];
+    // sortNamevalue.value = globalSearchValue.value;
+    function sortName () {
+        for (let i = 0; i < myarray.length; i++) {
+        var tr = myarray[i].name.indexOf(sortNamevalue.value) !== -1;
+        
+        if (tr == true) {
+            arr.push(myarray[i])            
+        }
+        
+    }
+    deletCatalog();
 
+    let allproducts2 = new AllProducts('.container_produkt', '.container_counter', arr);
+
+    console.log(arr)
+    }
+    sortName ()
+}
 
 
     

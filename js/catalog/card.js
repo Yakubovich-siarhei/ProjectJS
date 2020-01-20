@@ -32,7 +32,7 @@ class Cart{
                 let price = createOneProduct.getCatalogItem({
                     tagName: 'div',
                     className: 'price',
-                    textName: 'цена товара: '+productsCart[i].price + '$'
+                    textName: 'цена товара: '+productsCart[i].price
                 });
                 item.appendChild(name);
                 item.appendChild(img);

@@ -65,9 +65,9 @@
                             </div>
                             <div class="search col-9">
                                 <form class="catalin">
-                                    <input type="text" placeholder="ПОИСК..." required>
-                                    <button type="submit"><i class="fab fa-twitter"></i></button>
-                                </form>
+                                    <input class="globalSearchValue" type="text" placeholder="ПОИСК...">
+                                    <button type="submit" class="globalSearch2"><i class="fab fa-twitter"></i></button>
+                            </form>
                             </div>                                 
                         </div> 
                     </div>
@@ -132,18 +132,23 @@
                 </div>
                   
                 <div class="search_menu col-3">
-                    <p><b>выбери</b></p>
-                    <p><input class="radio" name="radio" type="radio" value="1">самокат</p>
-                    <p><input class="radio" name="radio" type="radio" value="2">санки</p>
-                    <p><input class="radio" name="radio" type="radio" value="3">велики</p>
-                    <input id="radioClik"  type="submit" value="Выбрать"><br>
+                    <div class="sort_category">
+                        <p><b>выбери</b></p>
+                        <p><input class="radio" name="radio" type="radio" value="1">самокат</p>
+                        <p><input class="radio" name="radio" type="radio" value="2">санки</p>
+                        <p><input class="radio" name="radio" type="radio" value="3">велики</p>
+                        <input id="radioClik"  type="submit" value="Выбрать">
+                    </div>
+
+                    
+                    <br><br><br>
                     <input id="sortDown" class="sortDown" type="submit" value="По убыванию цены">
                     <input id="sortDown2" class="sortDown2" type="submit" value="По убыванию цены выбранной категории">
                     <input id="sortUp" class="sortUp" type="submit" value="По возрастанию цены">
                     <input id="sortUp2" class="sortUp2" type="submit" value="По возрастанию цены выбранной категории">
                     <input id="allSort" class="allSort" type="submit" value="Весь каталог"><br>
-                    <!-- <input type="text" name="" class="maxPrice" value="">
-                    <input id="sortPrice" type="submit" value="цены"> -->
+                    <input type="text" name="" class="sortNamevalue" placeholder="что ищем? ">
+                    <input id="sortName" type="submit" value="поиск">
                 </div>                 
                 <div id="container_produkt" class="container_produkt col-9"></div>  
                 <div class="container_cart">
@@ -194,6 +199,7 @@
     <script src="./js/catalog/createOneProducts.js"></script>
     <script src="./js/catalog/catalog.js"></script>
     <script src="./js/catalog/card.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
     
     
     
