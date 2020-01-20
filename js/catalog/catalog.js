@@ -7,10 +7,9 @@ class AllProducts{
         this.createCatalog();
     }
 
-    
     createCatalog(){
         let wrapper = document.createElement('slot');
-        wrapper.className = 'slot'; 
+        wrapper.className = 'slot';
         let products = cardStorage.getProducts();
         this.containerCounter.innerHTML = products.length;
         for(let i = 0; i < this.catalogProduct.length; i++){
@@ -19,31 +18,31 @@ class AllProducts{
             let activeText;
             if(index === -1){
                  activeClass = '';
-                 activeText = 'Добавить в корзину'
+                 activeText = 'Добавить в корзину';
             } else{
                  activeClass = 'container';
-                 activeText = 'Добавить в корзину'
+                 activeText = 'Удалить из корзины';
             }
-            let item = this.getCatalogItem({
+            let item = createOneProduct.getCatalogItem({
                 tagName: 'div',
                 className: 'item'
             });
-            let name = this.getCatalogItem({
+            let name = createOneProduct.getCatalogItem({
                 tagName: 'div',
                 className: 'name',
                 textName: this.catalogProduct[i].name
             });
-            let img = this.getCatalogItem({
+            let img = createOneProduct.getCatalogItem({
                 tagName: 'div',
                 className: 'img',
                 backgroundImage: `url('${this.catalogProduct[i].img}')` 
             });
-            let price = this.getCatalogItem({
+            let price = createOneProduct.getCatalogItem({
                 tagName: 'div',
                 className: 'price',
                 textName: this.catalogProduct[i].price
             });
-            let btn = this.getCatalogItem({
+            let btn = createOneProduct.getCatalogItem({
                 tagName: 'button',
                 className: 'btn_catalog',
                 textName: activeText,
@@ -52,12 +51,15 @@ class AllProducts{
             btn.addEventListener('click', function(){
                 let id = this.getAttribute('data-id');
                 let result = cardStorage.putProducts(id);
+
+                allProducts.containerCounter.innerHTML = result.products.length;
+
                 if(result.productPush){
                     this.innerHTML = 'Удалить из корзины';
                 } else {
                     this.innerHTML = 'Добавить в корзину';
                 }
-            })
+            });
             item.appendChild(name);
             item.appendChild(img);
             item.appendChild(price);
@@ -66,24 +68,6 @@ class AllProducts{
         }
         this.container.appendChild(wrapper);
     }
-
-    getCatalogItem(card){
-        let elem = document.createElement(card.tagName);
-        if('className' in card){
-            elem.setAttribute('class', card.className);
-        };
-        if('textName' in card){
-            elem.innerHTML = card.textName;
-        };
-        if('backgroundImage' in card){
-            elem.style.backgroundImage = card.backgroundImage;
-        }
-        if('id' in card){
-            elem.setAttribute('data-id', card.id);
-        }
-        return elem;
-    }
-
 }
 
 let allProducts = new AllProducts('.container_produkt', '.container_counter', catalogProduct);
