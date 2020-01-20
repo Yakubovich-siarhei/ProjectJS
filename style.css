@@ -58,7 +58,7 @@ table {
 
 .container1 {
 	width: 100%; 
-	height: 30px;	
+	height: 40px;	
 	background-color: rgb(146, 151, 150);
 	max-width: 100%;
 	text-align: center;
@@ -81,6 +81,12 @@ table {
 .content_menu .menu {
 	display: flex;
 	justify-content: space-around;
+}
+
+.block_account p {
+	font-size: 5px;
+	padding: 0;
+	margin: 0;
 }
 
 .container2 {
@@ -111,6 +117,8 @@ table {
 	height: 50px;
 }
 
+
+
 .menu-item {
 	width:200px;
 }
@@ -125,6 +133,10 @@ table {
 
 .container2_2 {
 	height: 50px;
+}
+
+.container2_2 .active {
+	background-color: rgb(252, 252, 252, 0);
 }
 
 form.catalin{
@@ -329,7 +341,7 @@ form.catalin input:-ms-input-placeholder {
 	display: none;
 	align-items: flex-start;
 	position: fixed;
-	width: 70%;
+	width: 80%;
 	height: 97vh;
 	background-color: #fff;
 	box-shadow: 
@@ -372,18 +384,38 @@ form.catalin input:-ms-input-placeholder {
   .cart-close:hover:after{
 	border-color: #f00;
   }
+.bag {
+	display: flex;
+}
 
-.slot2 .item {
+.container_counter {
 	border: 1px solid blue;
+	border-radius: 10px;
 	padding: 5px;
 	text-align: center;
-	width: 320px;
-	height: 350px;
+	width: 40px;
+	height: 30px;	
+	cursor: pointer;
+}
+
+.container_cart {
+	background-color: rgb(106, 173, 175, 0.7);
+	text-align: center;
+}
+
+.slot2 .item {
+	border: 1px solid rgb(22, 22, 87);
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+	text-align: center;
+	width: 220px;
+	height: 250px;
 }
 
 .slot2 .item .img{
-	width: 300px;
-	height: 300px;
+	width: 200px;
+	height: 200px;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -616,3 +648,35 @@ form.catalin input:-ms-input-placeholder {
 	height: 200px;
 	background-color: rgb(34, 37, 34);
 }
+
+.animate {
+	text-align: center;
+	width: 400px;
+    height: 100%;
+    /* background-color: white; */
+}
+
+.animate p {
+	color: cornsilk;
+}
+
+#digit {
+	width: 0.5em;
+	overflow: hidden;
+	font: 100px monospace;
+	cursor: pointer;
+	margin: 0 auto;
+  }
+  
+  #stripe {
+	display: inline-block;
+	color: cornsilk;
+  }
+  
+  #stripe.animate {
+	transform: translate(-123%);
+	transition-property: transform;
+	transition-duration: 3s;
+	transition-timing-function: linear;
+	color: cornsilk;
+  }

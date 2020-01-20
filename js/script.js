@@ -217,7 +217,9 @@ document.getElementById('body').onload = time();
 
 
 
-
+stripe.onclick = function() {
+  stripe.classList.add('animate');
+};
 
 
 
