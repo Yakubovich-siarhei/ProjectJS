@@ -215,11 +215,15 @@ document.getElementById('body').onload = time();
 
 
 
+let stripe = document.getElementById('stripe');
 
-
-stripe.onclick = function() {
-  stripe.classList.add('animate');
-};
+stripe.addEventListener('click', function () {
+  if (stripe.className == 'animate') {
+    stripe.classList.remove('animate');
+  } else {    
+    stripe.classList.add('animate');
+  }
+});
 
 
 

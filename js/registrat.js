@@ -64,10 +64,10 @@ submitAc.addEventListener('click', function () {
     } 
 });
 
-document.querySelector('.bagSort').onclick = function () {
-    cardStorage = [];
-    cardStorage = JSON.parse(cardStorage);
-    deletCatalog();
-    let allproducts2 = new AllProducts('.container_produkt', '.container_counter', cardStorage);
-    console.log(cardStorage)
-}
+// document.querySelector('.bagSort').onclick = function () {
+//     cardStorage = [];
+//     cardStorage = JSON.parse(cardStorage);
+//     deletCatalog();
+//     let allproducts2 = new AllProducts('.container_produkt', '.container_counter', cardStorage);
+//     console.log(cardStorage)
+// }
