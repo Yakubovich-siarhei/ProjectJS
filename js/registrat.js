@@ -55,11 +55,11 @@ if (logPersons === null) {
 
 submitAc.addEventListener('click', function () {
     for (let i in logPersons) {
-        if (loginAc.value == logPersons[i].nameAc && loginPasAc.value == logPersons[i].pasAc) {
+        if (loginAc.value == logPersons[i].firstName && loginPasAc.value == logPersons[i].password) {
             window.open('./registrat.html');
 
-        } else if(logPersons !== null) {
-            window.open('./registrat.html');
+        } else {
+            alert('Проверьте логин или пароль')
         }
     } 
 });

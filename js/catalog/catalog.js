@@ -40,7 +40,7 @@ class AllProducts{
             let price = createOneProduct.getCatalogItem({
                 tagName: 'div',
                 className: 'price',
-                textName: this.catalogProduct[i].price
+                textName: this.catalogProduct[i].price + ' $'
             });
             let btn = createOneProduct.getCatalogItem({
                 tagName: 'button',
@@ -106,31 +106,25 @@ function sortProduct () {
     document.getElementById('radioClik').onclick = sortProduct;
     
 
-// убывание цены
+// возрастание цены
 document.querySelector('.sortUp').onclick = function () {
     let myarray=catalogProduct;
-        myarray.sort(function(a,b){ 
-    return a.price-b.price;    
-})
+        myarray.sort(function (a, b) {
+            if (a.price > b.price) {
+              return 1;
+            }
+            if (a.price < b.price) {
+              return -1;
+            }
+            // a должно быть равным b
+            return 0;
+          });
     console.log(myarray)
     deletCatalog();
-    let allproducts2 = new AllProducts('.container_produkt', '.container_counter', myarray);
+    let allproducts3 = new AllProducts('.container_produkt', '.container_counter', myarray);
 }
 
-// убывание цены2
-document.querySelector('.sortUp2').onclick = function () {
-    let myarray2=sort;
-        myarray2.sort(function(a,b){ 
-    return a.price-b.price;    
-})
-    console.log(myarray2)
-    deletCatalog();
-    let allproducts2 = new AllProducts('.container_produkt', '.container_counter', myarray2);
-}
-
-
-
-// возрастание  цены
+// убывание  цены
 document.querySelector('.sortDown').onclick = function () {
     let myarray=catalogProduct;
         myarray.sort(function(a,b){ 
@@ -138,23 +132,36 @@ document.querySelector('.sortDown').onclick = function () {
 })    
     console.log(myarray)
     deletCatalog();
-    let allproducts2 = new AllProducts('.container_produkt', '.container_counter', myarray);
+    let allproducts5 = new AllProducts('.container_produkt', '.container_counter', myarray);
 }
+
+// убывание цены2
+document.querySelector('.sortUp2').onclick = function () {
+    let myarray2=sort;
+        myarray2.sort(function(a2,b2){ 
+    return a2.price-b2.price;    
+})
+    console.log(myarray2)
+    deletCatalog();
+    let allproducts4 = new AllProducts('.container_produkt', '.container_counter', myarray2);
+}
+
+
 
 // возрастание  цены2
 document.querySelector('.sortDown2').onclick = function () {
     let myarray2=sort;
-        myarray2.sort(function(a,b){ 
-    return b.price-a.price; 
+        myarray2.sort(function(a2,b2){ 
+    return b2.price-a2.price; 
 })    
     console.log(myarray2)
     deletCatalog();
-    let allproducts2 = new AllProducts('.container_produkt', '.container_counter', myarray2);
+    let allproducts6 = new AllProducts('.container_produkt', '.container_counter', myarray2);
 }
 
 document.querySelector('.allSort').onclick = function () {
     deletCatalog();
-    let allproducts2 = new AllProducts('.container_produkt', '.container_counter', catalogProduct);
+    let allproducts7 = new AllProducts('.container_produkt', '.container_counter', catalogProduct);
 }
 
 
