@@ -13,8 +13,8 @@ let logPersons = localStorage.getItem('logPersons');
 
 
 
-let adminLogin = function () {
-    regAc.addEventListener('click', function () {
+let adminLogin = () => {
+    regAc.addEventListener('click', () => {
         if (nameAc.value && pasAc.value && pasAc2.value !== '') {
             alert('Вы успещно зарегестрированы');
             return Create()
@@ -26,7 +26,7 @@ let adminLogin = function () {
 };
 
 if (regAc !== null) {
-    window.onload = function () {
+    window.onload = () => {
         adminLogin();
     }
 }
@@ -53,7 +53,7 @@ if (logPersons === null) {
 /*-sign in-*/
 
 
-submitAc.addEventListener('click', function () {
+submitAc.addEventListener('click', () => {
     for (let i in logPersons) {
         if (loginAc.value == logPersons[i].firstName && loginPasAc.value == logPersons[i].password) {
             window.open('./registrat.html');

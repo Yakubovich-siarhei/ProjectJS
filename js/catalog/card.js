@@ -8,7 +8,7 @@ class Cart{
 
 
     create(){
-        this.containerCounter.addEventListener('click', function(){
+        this.containerCounter.addEventListener('click', () => {
             cart.containerCart.style.display = 'flex';
             let productsCart = cart.getProductsCart();
             let wrapper = document.createElement('slot');
@@ -44,7 +44,7 @@ class Cart{
                 className: 'cart-close'
             });
 
-            close.addEventListener('click', function(){
+            close.addEventListener('click', () => {
                 cart.containerCart.innerHTML = '';
                 cart.containerCart.style.display = 'none';
             });

@@ -22,7 +22,7 @@ function auto () {
 setInterval(() => auto(), 4000);
 
 // prev
-document.querySelector('.arrow-prev').onclick = function () {
+document.querySelector('.arrow-prev').onclick = () => {
   if (current -1 == -1) {
       current = images.length -1;
   } else {
@@ -32,7 +32,7 @@ document.querySelector('.arrow-prev').onclick = function () {
 };
 
 // next
-document.querySelector('.arrow-next').onclick = function () {
+document.querySelector('.arrow-next').onclick = () => {
   if (current + 1 == images.length) {
       current = 0;
   } else {
@@ -42,21 +42,21 @@ document.querySelector('.arrow-next').onclick = function () {
 };
 
 //точки
-document.querySelector('.slider-dots_item1').onclick = function op1 () {
+document.querySelector('.slider-dots_item1').onclick = () => {
   for (let i = 0; i < images.length; i++) {
     images[i].classList.add('opacity0');
   }
   images[0].classList.remove('opacity0');  
 }
 
-document.querySelector('.slider-dots_item2').onclick = function op2 () {
+document.querySelector('.slider-dots_item2').onclick = () => {
   for (let i = 0; i < images.length; i++) {
     images[i].classList.add('opacity0');
   }
   images[1].classList.remove('opacity0');  
 }
 
-document.querySelector('.slider-dots_item3').onclick = function op3 () {
+document.querySelector('.slider-dots_item3').onclick = () => {
   for (let i = 0; i < images.length; i++) {
     images[i].classList.add('opacity0');
   }
@@ -80,7 +80,7 @@ function slider2() {
 slider2()
 
 
-document.querySelector('.arrow-prev2').onclick = function () {
+document.querySelector('.arrow-prev2').onclick = () => {
   if (current2 -1 == -1) {
       current2 = images2.length -1;
   } else {
@@ -89,7 +89,7 @@ document.querySelector('.arrow-prev2').onclick = function () {
   slider2();
 };
 
-document.querySelector('.arrow-next2').onclick = function () {
+document.querySelector('.arrow-next2').onclick = () => {
   if (current2 + 1 == images2.length) {
       current2 = 0;
   } else {
@@ -108,7 +108,7 @@ for(let i=0; i<el.length; i++) {
   el[i].addEventListener("mouseleave", hideSub, false);
 }
 
-function showSub(e) {
+function showSub() {
   if(this.children.length>1) {
      this.children[1].style.height = "auto";
      this.children[1].style.overflow = "visible";
@@ -120,7 +120,7 @@ function showSub(e) {
   }
 }
 
-function hideSub(e) {
+function hideSub() {
   if(this.children.length>1) {
     this.children[1].style.height = "0px";
     this.children[1].style.overflow = "hidden";
@@ -214,10 +214,9 @@ function time() {
 document.getElementById('body').onload = time();
 
 
-
 let stripe = document.getElementById('stripe');
 
-stripe.addEventListener('click', function () {
+stripe.addEventListener('click', () => {
   if (stripe.className == 'animate') {
     stripe.classList.remove('animate');
   } else {    
@@ -231,61 +230,11 @@ stripe.addEventListener('click', function () {
 let globalSearchValue = document.querySelector('.globalSearchValue');
 let globalSearch = document.querySelector('.globalSearch');
 
-globalSearch.onclick = function () {    
-    window.open('./catalog.html')
-    }
+globalSearch.onclick = () => {   
+  window.open('./catalog.html')
+}
 
 
-
-  document.querySelector('.lang').onclick = function () {  
-    function doGet(e) {
-
-      var sourceText = ''
-      if (e.parameter.q){
-        sourceText = e.parameter.q;
-      }
-    
-      var sourceLang = 'en';
-      if (e.parameter.source){
-        sourceLang = e.parameter.source;
-      }
-    
-      var targetLang = 'ja';
-      if (e.parameter.target){
-        targetLang = e.parameter.target;
-      }
-    
-      /* Option 1 */
-    
-      var translatedText = LanguageApp.translate(sourceText, sourceLang, targetLang)
-    
-      /* Option 2 */
-    
-      var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl="
-                + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
-    
-      var result = JSON.parse(UrlFetchApp.fetch(url).getContentText());
-    
-      translatedText = result[0][0][0];
-    
-      var json = {
-        'sourceText' : sourceText,
-        'translatedText' : translatedText
-      };
-    
-      // set JSONP callback
-      var callback = 'callback';
-      if(e.parameter.callback){
-        callback = e.parameter.callback
-      }
-    
-      // return JSONP
-      return ContentService
-               .createTextOutput(callback + '(' + JSON.stringify(json) + ')')
-               .setMimeType(ContentService.MimeType.JAVASCRIPT);
-    }
-    doGet(e)
-  }
 
 
 // //document.getElementsByClassName("container8")

@@ -48,7 +48,7 @@ class AllProducts{
                 textName: activeText,
                 id: this.catalogProduct[i].id
             });
-            btn.addEventListener('click', function(){
+            btn.addEventListener('click', function () {
                 let id = this.getAttribute('data-id');
                 let result = cardStorage.putProducts(id);
 
@@ -60,6 +60,7 @@ class AllProducts{
                     this.innerHTML = 'Добавить в корзину';
                 }
             });
+            
             item.appendChild(name);
             item.appendChild(img);
             item.appendChild(price);
@@ -76,7 +77,7 @@ let allProducts = new AllProducts('.container_produkt', '.container_counter', ca
 let sort = [];
 function sortProduct () {
     function getStatus(array, search) {
-        return array.filter(function(item) {
+        return array.filter((item) => {
                     return search(item)
             })
         };
@@ -87,7 +88,7 @@ function sortProduct () {
                 // console.log("selected: " + inp[i].value);           
     
         
-        sort = (getStatus(catalogProduct, function(item) {
+        sort = (getStatus(catalogProduct, (item) => {
             return item.idCod == inp[i].value;
         }));
             // console.log(sort);  
@@ -107,7 +108,7 @@ function sortProduct () {
     
 
 // возрастание цены
-document.querySelector('.sortUp').onclick = function () {
+document.querySelector('.sortUp').onclick = () => {
     let myarray=catalogProduct;
         myarray.sort(function (a, b) {
             if (a.price > b.price) {
@@ -125,7 +126,7 @@ document.querySelector('.sortUp').onclick = function () {
 }
 
 // убывание  цены
-document.querySelector('.sortDown').onclick = function () {
+document.querySelector('.sortDown').onclick = () => {
     let myarray=catalogProduct;
         myarray.sort(function(a,b){ 
     return b.price-a.price; 
@@ -136,7 +137,7 @@ document.querySelector('.sortDown').onclick = function () {
 }
 
 // убывание цены2
-document.querySelector('.sortUp2').onclick = function () {
+document.querySelector('.sortUp2').onclick = () => {
     let myarray2=sort;
         myarray2.sort(function(a2,b2){ 
     return a2.price-b2.price;    
@@ -149,7 +150,7 @@ document.querySelector('.sortUp2').onclick = function () {
 
 
 // возрастание  цены2
-document.querySelector('.sortDown2').onclick = function () {
+document.querySelector('.sortDown2').onclick = () => {
     let myarray2=sort;
         myarray2.sort(function(a2,b2){ 
     return b2.price-a2.price; 
@@ -159,7 +160,7 @@ document.querySelector('.sortDown2').onclick = function () {
     let allproducts6 = new AllProducts('.container_produkt', '.container_counter', myarray2);
 }
 
-document.querySelector('.allSort').onclick = function () {
+document.querySelector('.allSort').onclick = () => {
     deletCatalog();
     let allproducts7 = new AllProducts('.container_produkt', '.container_counter', catalogProduct);
 }
@@ -169,7 +170,7 @@ document.querySelector('.allSort').onclick = function () {
 // let globalSearchValue = document.querySelector('.globalSearchValue');
 let sortNamevalue = document.querySelector('.sortNamevalue');
 
-sortNamevalue.oninput = function sortN () {
+sortNamevalue.oninput = () => {
     let myarray=catalogProduct;
     let arr = [];
     // sortNamevalue.value = globalSearchValue.value;

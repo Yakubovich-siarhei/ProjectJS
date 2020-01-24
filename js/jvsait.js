@@ -19,7 +19,7 @@ function modaln () {
 }
 setTimeout(() => modaln(), 5000);
 
-sub.onclick = function () {
+sub.onclick = () => {
   let valText = text.value;
   admin.innerHTML += '\r\n'+ text.name+ ":  " +  valText;
 }

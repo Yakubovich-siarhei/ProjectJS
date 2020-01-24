@@ -19,12 +19,12 @@ function modaln2 () {
 }
 setTimeout(() => modaln2(), 5000);
 
-sub2.onclick = function () {
+sub2.onclick = () => {
   let valText2 = text2.value;
   admin2.innerHTML += '\r\n'+ text2.name+ ":  " +  valText2;
 }
 
-closeM2.onclick = function () {
+closeM2.onclick = () => {
     mod2.style.display = "none"; 
 }
 
@@ -39,7 +39,7 @@ for(let i=0; i<el.length; i++) {
   el[i].addEventListener("mouseleave", hideSub, false);
 }
 
-function showSub(e) {
+function showSub() {
   if(this.children.length>1) {
      this.children[1].style.height = "auto";
      this.children[1].style.overflow = "visible";
@@ -51,7 +51,7 @@ function showSub(e) {
   }
 }
 
-function hideSub(e) {
+function hideSub() {
   if(this.children.length>1) {
     this.children[1].style.height = "0px";
     this.children[1].style.overflow = "hidden";

@@ -5,12 +5,12 @@ let news = d.querySelector('.news');
 let cart = d.querySelector('.cart');
 
 
-news.addEventListener('click', function () {
+news.addEventListener('click', () => {
     containerNews.style.display = "block"; 
     containerAbount.style.display = "none"; 
 });
 
-cart.addEventListener('click', function () {
+cart.addEventListener('click', () => {
     containerNews.style.display = "none"; 
     containerAbount.style.display = "block"; 
 });

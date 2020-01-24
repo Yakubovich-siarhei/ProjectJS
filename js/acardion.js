@@ -2,7 +2,7 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
+    acc[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
         if (panel.style.display === "block") {
@@ -23,7 +23,7 @@ for(let i=0; i<el.length; i++) {
   el[i].addEventListener("mouseleave", hideSub, false);
 }
 
-function showSub(e) {
+function showSub() {
   if(this.children.length>1) {
      this.children[1].style.height = "auto";
      this.children[1].style.overflow = "visible";
@@ -35,7 +35,7 @@ function showSub(e) {
   }
 }
 
-function hideSub(e) {
+function hideSub() {
   if(this.children.length>1) {
     this.children[1].style.height = "0px";
     this.children[1].style.overflow = "hidden";
